@@ -2,15 +2,15 @@
  * @LastEditors: qingmeijiupiao
  * @Description: 按键相关
  * @Author: qingmeijiupiao
- * @LastEditTime: 2025-01-07 12:49:25
+ * @LastEditTime: 2025-07-07 23:33:30
  */
 
 #ifndef BUTTONS_HPP
 #define BUTTONS_HPP
-#include "static/PINS.h"
+#include "PINS.h"
 #include "OneButton.h"
 #include "SCREEN.hpp"
-#include "static/HXCthread.hpp"
+#include "HXCthread.hpp"
 OneButton right_button(BUT1, true);           // 右按键
 OneButton big_button(BUT2, true);             // 大按键
 OneButton left_button(BUT3, true);            // 左按键

@@ -3,13 +3,13 @@
  * @Description: 功率表相关部分
  * @note: 该文件为普通版本和PRO版本的功率表的实现，通过宏 IS_PRO_VERSION 来控制 在pltformio.ini 中添加宏定义来控制是PRO版本还是普通版
  * @Author: qingmeijiupiao
- * @LastEditTime: 2025-03-27 16:24:05
+ * @LastEditTime: 2025-07-07 23:33:05
  */
 #ifndef POWERMETER_HPP
 #define POWERMETER_HPP
 
 #include "FixedSizeQueue.hpp"
-#include "static/HXCthread.hpp"
+#include "HXCthread.hpp"
 #include "HXC_NVS.hpp"
 
 #ifdef IS_PRO_VERSION

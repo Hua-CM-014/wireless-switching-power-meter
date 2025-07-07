@@ -12,9 +12,9 @@
 #include <WebServer.h> //ESP32 Arduino SDK库
 #include <ArduinoJson.h>
 #include "web/c_header/index_html.h"// 前端文件，这个头文件是自动生成的，源文件在include/web/src/
-#include "static/HXCthread.hpp"
-#include "static/POWERMETER.hpp"
-#include "static/HXC_NVS.hpp"
+#include "HXCthread.hpp"
+#include "POWERMETER.hpp"
+#include "HXC_NVS.hpp"
 
 namespace WEB{
     

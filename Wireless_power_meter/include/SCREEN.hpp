@@ -12,11 +12,11 @@
 #include <list> 
 
 
-#include "static/HXC_NVS.hpp"
-#include "static/POWERMETER.hpp"
-#include "static/powerctrl.hpp"
+#include "HXC_NVS.hpp"
+#include "POWERMETER.hpp"
+#include "powerctrl.hpp"
 #include "WIRELESSCTRL.hpp"
-#include "static/TemperatureSensor.hpp"
+#include "TemperatureSensor.hpp"
 
 #include "img/wifi_img.hpp"
 #include "img/robocon_img.hpp"

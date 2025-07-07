@@ -2,14 +2,14 @@
  * @LastEditors: qingmeijiupiao
  * @Description: 串口命令行相关
  * @Author: qingmeijiupiao
- * @LastEditTime: 2025-02-22 22:03:57
+ * @LastEditTime: 2025-07-07 23:34:24
  */
 #ifndef SHELL_HPP
 #define SHELL_HPP
-#include "static/SimpleSerialShell.hpp"
-#include "static/HXCthread.hpp"
-#include "static/HXC_NVS.hpp"
-#include "static/POWERMETER.hpp"
+#include "SimpleSerialShell.hpp"
+#include "HXCthread.hpp"
+#include "HXC_NVS.hpp"
+#include "POWERMETER.hpp"
 #include "OTHER_FUNCTION.hpp"
 #include "web.hpp"
 namespace SHELL{

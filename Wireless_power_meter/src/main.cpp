@@ -2,7 +2,7 @@
  * @LastEditors: qingmeijiupiao
  * @Description: 主程序，用于控制电压、电流测量、显示及按键操作等
  * @Author: qingmeijiupiao
- * @LastEditTime: 2025-06-09 22:12:14
+ * @LastEditTime: 2025-07-07 23:31:35
  */
 /*
                                               .=%@#=.
@@ -74,10 +74,10 @@
 
 */
 #include <Arduino.h>
-#include "static/PINS.h"
-#include "static/powerctrl.hpp"// 电源控制
-#include "static/TemperatureSensor.hpp"// 温度传感器
-#include "static/buzz.hpp"// 蜂鸣器
+#include "PINS.h"
+#include "powerctrl.hpp"// 电源控制
+#include "TemperatureSensor.hpp"// 温度传感器
+#include "buzz.hpp"// 蜂鸣器
 #include "WIRELESSCTRL.hpp"// 无线控制
 #include "BUTTONS.hpp"// 按键
 #include "SCREEN.hpp"// 屏幕

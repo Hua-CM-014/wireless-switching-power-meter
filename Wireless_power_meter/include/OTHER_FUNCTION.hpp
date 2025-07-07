@@ -8,11 +8,11 @@
 #ifndef OTHER_FUNCTION_HPP
 #define OTHER_FUNCTION_HPP
 #include <Arduino.h>
-#include "static/HXC_NVS.hpp"
-#include "static/POWERMETER.hpp"
-#include "static/powerctrl.hpp"
-#include "static/TemperatureSensor.hpp"// 温度传感器
-#include "static/HXCthread.hpp"
+#include "HXC_NVS.hpp"
+#include "POWERMETER.hpp"
+#include "powerctrl.hpp"
+#include "TemperatureSensor.hpp"// 温度传感器
+#include "HXCthread.hpp"
 
 extern POWERCTRL_t power_output;
 namespace OTHER_FUNCTION{

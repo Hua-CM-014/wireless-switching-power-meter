@@ -8,10 +8,10 @@
 #ifndef WIRELESSCTRL_HPP
 #define WIRELESSCTRL_HPP
 #include <Arduino.h>
-#include "static/POWERMETER.hpp"
-#include "static/powerctrl.hpp"
-#include "static/HXC_NVS.hpp"
-#include "static/ESPNOW.hpp"
+#include "POWERMETER.hpp"
+#include "powerctrl.hpp"
+#include "HXC_NVS.hpp"
+#include "ESPNOW.hpp"
 extern POWERCTRL_t power_output;
 uint8_t self_Macaddress[6]={0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};  // 自己的mac地址,初始化为广播地址
 // 远程控制相关
