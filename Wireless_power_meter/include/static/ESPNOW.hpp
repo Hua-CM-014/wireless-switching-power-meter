@@ -2,7 +2,7 @@
  * @LastEditors: qingmeijiupiao
  * @Description: 重庆邮电大学HXC战队ESP-NOW二次封装库,指定了发包格式
  * @Author: qingmeijiupiao
- * @LastEditTime: 2025-02-13 13:49:54
+ * @LastEditTime: 2025-07-07 23:17:47
  */
 
 #ifndef esp_now_hpp
@@ -134,8 +134,8 @@ struct HXC_ESPNOW_data_pakage {
   }
   //获取数据
   void get_data(uint8_t* _data){
-    _data[0]=header_code/256;
-    _data[1]=header_code%256;
+    _data[0]=header_code&0xFF;
+    _data[1]=header_code>>8;
     _data[2]=package_name.length();
     _data[3]=data_len;
     memcpy(_data+4,package_name.c_str(),package_name.length());
@@ -144,7 +144,7 @@ struct HXC_ESPNOW_data_pakage {
 
   //解码数组到结构体对象
   void decode(uint8_t* _data,int _datalen){
-    header_code=_data[0]+_data[1]*256;
+    header_code=*((uint16_t*)_data);
     name_len=_data[2];
     data_len=_data[3];
     package_name="";
