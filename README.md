@@ -27,31 +27,45 @@ Wireless_power_meter
 ├── include //模块文件，主要的代码均在这里
 │   ├── BUTTONS.hpp //按键封装驱动
 │   ├── OTHER_FUNCTION.hpp //其他功能，例如：各种保护实现
+│   ├── PINS.h //按键宏定义
+│   ├── powerctrl.hpp //输出控制驱动
+│   ├── POWERMETER.hpp //电流电压数据读取的封装，PRO版本和普通版本代码唯一的区别在这个文件，由宏定义控制
 │   ├── SCREEN.hpp //屏幕显示相关代码
+│   ├── shell.hpp //串口控制台相关实现
+│   ├── web.hpp //网页后端和WIFI驱动
 │   ├── WIRELESSCTRL.hpp //无线控制相关代码
 │   ├── img //储存图片数组的文件夹
 │   │   ├── CQUPTHXC_img.hpp
 │   │   ├── JLC_LOGO.hpp
 │   │   ├── robocon_img.hpp
 │   │   └── wifi_img.hpp
-│   ├── shell.hpp //串口控制台相关实现
-│   ├── static //底层驱动，不建议修改下面的文件
-│   │   ├── ESPNOW.hpp //ESPNOW封装库
-│   │   ├── FixedSizeQueue.hpp //定长队列封装库
-│   │   ├── HXC_NVS.hpp //NVS存储封装库，用于断电数据保存
-│   │   ├── HXCthread.hpp //对FreeRTOS的二次封装库，实现类似std::thread的功能
-│   │   ├── PINS.h //按键宏定义
-│   │   ├── POWERMETER.hpp //电流电压数据读取的封装，PRO版本和普通版本代码唯一的区别在这个文件，由宏定义控制
-│   │   ├── SimpleSerialShell.hpp //串口控制台底层驱动
-│   │   ├── TemperatureSensor.hpp //温度读取驱动
-│   │   ├── buzz.hpp //蜂鸣器驱动
-│   │   └── powerctrl.hpp //输出控制驱动
-│   ├── web //网页前端相关
-│   │   ├── c_header //网页前端数组，由脚本自动生成不可自行修改
-│   │   │   └── index_html.h
-│   │   └── src //网页前端源文件
-│   │       └── index.html
-│   └── web.hpp //网页后端和WIFI驱动
+│   └── web //网页前端相关
+│       ├── c_header //网页前端数组，由脚本自动生成不可自行修改
+│       │   └── index_html.h
+│       └── src //网页前端源文件
+│           └── index.html
+├── lib //底层驱动库
+│   ├── buzz //蜂鸣器驱动
+│   │   └── buzz.hpp
+│   ├── ESP-NOW //ESPNOW封装库
+│   │   ├── ESPNOW.hpp
+│   │   ├── remotePrint.hpp
+│   │   └── Example
+│   │       └── test.cpp
+│   ├── FixedSizeQueue //定长队列封装库
+│   │   └── FixedSizeQueue.hpp
+│   ├── HXCthread //对FreeRTOS的二次封装库，实现类似std::thread的功能
+│   │   ├── HXCthread.hpp
+│   │   └── Example
+│   │       └── main.cpp
+│   ├── HXC_NVS //NVS存储封装库，用于断电数据保存
+│   │   ├── HXC_NVS.hpp
+│   │   └── Example
+│   │       └── main.cpp
+│   ├── SimpleSerialShell //串口控制台底层驱动
+│   │   └── SimpleSerialShell.hpp
+│   └── TemperatureSensor //温度读取驱动
+│       └── TemperatureSensor.hpp
 ├── platformio.ini //工程配置文件
 ├── scripts //工程脚本
 │   ├── embed_files.py //前端数组生成脚本
