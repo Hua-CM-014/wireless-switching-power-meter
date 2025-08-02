@@ -42,6 +42,7 @@ namespace POWERMETER {
     float output_mwh = 0;                    // 输出的毫瓦时
     float MAX_CURRENT = 0;                    // 最大电流
     float MAX_VOLTAGE = 0;                    // 最大电压
+    float MAX_POWER = 0;                      // 添加：最大功率变量
     uint32_t last_time = millis();             // 上次读取的时间
     FixedSizeQueue<float,READ_HZ*data_save_time> voltage_queue;         // 电压队列
     FixedSizeQueue<float,READ_HZ*data_save_time> current_queue;         // 电流队列
@@ -102,6 +103,13 @@ namespace POWERMETER {
             current = float(row_data) * 0.0025/sample_resistance;     // 转换电流数据
             //↑↑↑↑↑↑↑↑↑↑普通版↑↑↑↑↑↑↑↑↑↑
             #endif
+            
+             // 计算当前功率并更新最大功率
+            float current_power = voltage * current;  // 计算实时功率
+            if (current_power > MAX_POWER) {          // 更新最大功率
+                MAX_POWER = current_power;
+            }
+            
             // 更新最大电压和最大电流
             if (voltage > MAX_VOLTAGE) MAX_VOLTAGE = voltage;
             if (current > MAX_CURRENT) MAX_CURRENT = current;

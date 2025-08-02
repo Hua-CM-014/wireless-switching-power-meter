@@ -140,27 +140,21 @@ namespace SCREEN {
         };
         draw_temperature(); // 调用温度绘制函数
 
-        // 最大电压和电流显示
+        // 替换：显示最大功率（原最大电压和电流位置）
         auto draw_max_values = []() {
             char buffer[4];
             clk.setCursor(170, 30);
-            clk.print("MAX:");
+            clk.print("MAX:");  // 标题不变
             
+            // 只显示最大功率（替换原电压和电流）
             clk.setCursor(170, 50);
-            clk.setTextColor(TFT_RED);
-            sprintf_float(POWERMETER::MAX_VOLTAGE, buffer, 3);
+            clk.setTextColor(power_color);  // 使用功率颜色（蓝色）
+            sprintf_float(POWERMETER::MAX_POWER, buffer, 3);  // 显示最大功率
             clk.print(buffer);
             clk.setTextColor(default_color);
-            clk.print("V");
-
-            clk.setCursor(170, 70);
-            clk.setTextColor(TFT_GREEN);
-            sprintf_float(POWERMETER::MAX_CURRENT, buffer, 3);
-            clk.print(buffer);
-            clk.setTextColor(default_color);
-            clk.print("A");
+            clk.print("W");  // 单位改为瓦特
         };
-        draw_max_values(); // 调用最大值绘制函数
+        draw_max_values();  // 调用修改后的最大值绘制函数
 
         // 连接图标
         auto draw_connection_icon = []() {
