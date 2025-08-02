@@ -140,7 +140,7 @@ namespace SCREEN {
         };
         draw_temperature(); // 调用温度绘制函数
 
-        // 替换：显示最大功率（原最大电压和电流位置）
+        // 替换：显示最大功率（原最大电压和电流位置）Test
         auto draw_max_values = []() {
             char buffer[4];
             clk.setCursor(170, 30);
